@@ -1,4 +1,4 @@
-
+alert('alert(“Я оцениваю свою работу на 110 баллов” )')
 
 window.addEventListener('load', function () {
     const cardINrofm = [
