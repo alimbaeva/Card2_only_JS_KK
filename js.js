@@ -16,21 +16,13 @@ window.addEventListener('load', function () {
         const card = document.createElement('div');
         card.setAttribute('id', 'wrapper ');
         const cardInner = document.createElement('div');
-        cardInner.setAttribute('class', 'cardInner');
         const imgCard = document.createElement('img');
-        imgCard.setAttribute('class', 'imgCard');
         const title = document.createElement('h3');
-        title.setAttribute('class', 'title');
         const text = document.createElement('p');
-        text.setAttribute('class', 'text');
         const ul = document.createElement('ul');
-        ul.setAttribute('class', 'ul');
         const userPart = document.createElement('div');
-        userPart.setAttribute('class', 'userPart');
         const imgUser = document.createElement('img');
-        imgUser.setAttribute('class', 'imgUser');
         const imgInfo = document.createElement('h4');
-        imgInfo.setAttribute('class', 'imgInfo');
         const a = document.createElement('a');
         a.setAttribute('src', '');
 
@@ -40,8 +32,13 @@ window.addEventListener('load', function () {
 
         for (let i = 0; i < 2; i++) {
             const li = document.createElement('li');
-            li.setAttribute('class', 'liText');
+            // li.setAttribute('class', 'liText');
             li.innerHTML = cardINrofm[`li${i + 1}`];
+            li.style.cssText = `
+            color: rgb(109, 109, 235);
+            margun: 0;
+            list-style-type: none;
+            `
             ul.appendChild(li)
         }
 
@@ -64,9 +61,84 @@ window.addEventListener('load', function () {
 
         body.append(card);
 
+
+        cardInner.style.cssText = `
+            width: 320px;
+            margin: auto auto;
+        `
+
+        imgCard.style.cssText = `
+        width: 320px;
+        height: 300px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px white;
+        `
+
+        title.style.cssText = `
+            color: white;
+        `
+
+        text.style.cssText = `
+         color: rgb(165, 169, 172);
+        `
+
+        ul.style.cssText = `
+        padding: 0;
+           color:white;
+           display: flex;
+            justify-content: space-between;
+        `
+
+        imgUser.style.cssText = `
+            margin-right:13px;
+            width:70px;
+            height:60px;
+            border-radius: 50%;
+            border: 2px solid white;
+        `
+
+        imgInfo.style.cssText = `
+        margin-right:13px;
+        color: rgb(109, 109, 235);
+        `
+
+        a.style.cssText = `
+        color: rgb(165, 169, 172);
+        text-decoration: none;
+        `
+
+        userPart.style.cssText = `
+        display: flex;
+        align-items: center;  
+        border-top: 1px solid  rgb(165, 169, 172, .6);
+        padding-top: 15px
+
+        `
+
+        card.style.cssText = `
+            width: 380px;
+            min-height: 600px;
+            padding: 10px 0; 
+            background-color: rgb(9, 9, 88);
+            display: flex;
+            justify-content: center;
+            border-radius: 15px
+        `
+
+
         return body
 
     }
+
+    body.style.cssText = `
+    background-color: rgb(8, 8, 48);
+    `
+
+        ;
+    //     cardInner.style.cssText = `
+    //     width: 300px;
+    //     border: 1px solid rgb(8, 8, 48);
+    // `
 
     creatCard();
 })
